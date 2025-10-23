@@ -5,6 +5,17 @@
 
 ### Features
 
+- add TorchTrainer class for training and validation of neural networks ([dd6ff4a](https://github.com///commit/dd6ff4ae3842515d083e60a44c487ec20d96a4b4))
+- add stopwords list for text processing ([616e7a6](https://github.com///commit/616e7a630f2099488699527b7cbdbf8531ba6018))
+- add SpaCy NLP processor for tokenization and lemmatization of English text ([d46f5e9](https://github.com///commit/d46f5e9397cad0dfd1ed2923c9df94131006bf22))
+- add functions to filter and tokenize English words in text ([9ba0f09](https://github.com///commit/9ba0f0985e7ad7c7fa1033d4f20782670cf2ec49))
+- implement character-level RNN model in PyTorch ([4ec3a77](https://github.com///commit/4ec3a7714add5279295c66919a7672712d7b0ead))
+- save a rnn model.pth parameters ([b7649ce](https://github.com///commit/b7649ce9b4e6d4600a8041cb0a68722e022182a4))
+- implement data preprocessing and preparation for training ([32f67ba](https://github.com///commit/32f67ba3531bc5a56e1826e6c84386ee69a5743b))
+- add save_json function to serialize dictionary data to JSON file ([7e05d4e](https://github.com///commit/7e05d4ecd1b827d97b1c2146be41a175a619fc2c))
+- save a dictionary.json as word2id ([b24a1d2](https://github.com///commit/b24a1d2b1a6c3779fa9fc9efa1533f6b882d6df1))
+- enhance Timer decorator to include a description parameter ([a2eb8fb](https://github.com///commit/a2eb8fb1bebaee9d4457ed534a6ce6f7ab68a5cd))
+- update file paths in config.py for model, stopwords, and dictionary ([e263afc](https://github.com///commit/e263afc32c5dafa6231566f7a4775d52b96ee0b9))
 - add BSD 3-Clause License file ([bd1edff](https://github.com///commit/bd1edff2789ed55b7df2b3f43d66ee88d8f351f3))
 - add uv sync file uv.lock ([70b094b](https://github.com///commit/70b094b5b79c2d90a9f544d42ca4e9b0f7e1be77))
 - add THULAC text segmentation functions for word cutting with and without POS tags ([4b46ef5](https://github.com///commit/4b46ef58ee5f8a248ed03ca13c3d2853abce17ab))
@@ -43,6 +54,7 @@
 
 ### Chore
 
+- update CHANGELOG.md to include BSD 3-Clause License addition ([8db137a](https://github.com///commit/8db137a92b0303c9601258baf38507e0d102a698))
 - update CHANGELOG.md for version 0.1.0 with new features and improvements ([1a00a97](https://github.com///commit/1a00a97280435c7390864f4f90fc00628ad8f8bf))
 - add CHANGELOG.md for version 0.0.1 with bug fixes and documentation updates ([3289cdc](https://github.com///commit/3289cdc9cb21e251b3a64464f75e9ab7d10de7a4))
 - add git-changelog configuration to pyproject.toml ([437b03b](https://github.com///commit/437b03b9d2e5e6a0e197791c1671cd892380a477))
@@ -52,4 +64,9 @@
 ### Docs
 
 - add comprehensive project overview and environment setup instructions to README ([33a878a](https://github.com///commit/33a878a0bf4760a65e431e7d6f194f203cf8dda5))
+
+### Code Refactoring
+
+- comment out print statements for training and validation loss and accuracy ([045015b](https://github.com///commit/045015be92084d77ce51d8105b707ac8c8fad70f))
+- rename methods and instance of Outputter for consistency ([66a0f9e](https://github.com///commit/66a0f9ebf8558460da84a4270905083ffcb3ded5))
 
