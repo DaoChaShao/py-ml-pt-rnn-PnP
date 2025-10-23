@@ -14,18 +14,18 @@ class Outputter:
     """ Print Class with ON/OFF switch """
     _enabled: bool = True
 
-    def YES(self):
+    def yes(self):
         """ Open output """
         self._enabled = True
 
-    def NO(self):
+    def no(self):
         """ Close output """
         self._enabled = False
 
-    def PRINT(self, msg: str) -> None:
+    def print(self, msg: str) -> None:
         """ Display the message if switch is on """
         if self._enabled:
             print(msg)
 
 
-OUT = Outputter()
+out = Outputter()
