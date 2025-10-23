@@ -58,14 +58,14 @@ def beautifier(func):
 class Timer(object):
     """ Class timer decorator with precision control """
 
-    def __init__(self, precision: int = 6):
+    def __init__(self, description: str, precision: int = 6):
+        self._desc = description
         self._precision = precision
 
     def __call__(self, func):
-        from time import perf_counter
         def wrapper(*args, **kwargs):
             print("*" * 50)
-            print(f"Function {func.__name__} is starting...")
+            print(f"Function {func.__name__} is starting:")
             print("-" * 50)
             _start = perf_counter()
             result = func(*args, **kwargs)
@@ -74,7 +74,7 @@ class Timer(object):
             print("-" * 50)
             print(f"Function {func.__name__} has ended.")
             print("-" * 50)
-            print(f"Time elapsed: {(_end - _start):.{self._precision}f} seconds")
+            print(f"{self._desc} took {(_end - _start):.{self._precision}f} seconds.")
             print("*" * 50)
             return result
 
