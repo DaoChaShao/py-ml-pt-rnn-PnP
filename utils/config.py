@@ -16,8 +16,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 @dataclass
 class FilePaths:
-    SAVED_MODEL: Path = BASE_DIR / "models/model.pth"
+    MODEL: Path = BASE_DIR / "models/model.pth"
     PAPER = BASE_DIR / "data/Pride_and_Prejudice.txt"
+    STOPWORDS = BASE_DIR / "data/stopwords.txt"
+    DICTIONARY = BASE_DIR / "data/dictionary.json"
 
 
 @dataclass
