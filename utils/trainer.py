@@ -68,7 +68,7 @@ class TorchTrainer:
             _loss += loss.item() * features.size(0)
             _total += features.size(0)
 
-            print(f"Batches [{i + 1}/{len(dataloader)}] - Train Loss: {_loss / _total:.4f}")
+            # print(f"Batches [{i + 1}/{len(dataloader)}] - Train Loss: {_loss / _total:.4f}")
 
         return _loss / _total
 
@@ -108,9 +108,9 @@ class TorchTrainer:
                 _correct += self._get_accuracy(outputs, labels)
                 _total += labels.numel()
 
-                print(
-                    f"Batches [{i + 1}/{len(dataloader)}] - Valid Loss: {_loss / _total:.4f} - Accuracy: {_correct / _total:.2%}"
-                )
+                # print(
+                #     f"Batches [{i + 1}/{len(dataloader)}] - Valid Loss: {_loss / _total:.4f} - Accuracy: {_correct / _total:.2%}"
+                # )
 
         return _loss / _total, _correct / _total
 
