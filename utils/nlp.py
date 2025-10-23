@@ -10,9 +10,11 @@ from collections import Counter
 from pathlib import Path
 from re import compile, sub
 from pandas import DataFrame
-from stanza import Pipeline, download
+from stanza import Pipeline
 
+from utils.config import CONFIG
 from utils.decorator import timer
+from utils.helper import read_file
 
 
 @timer
@@ -31,7 +33,22 @@ def regular_chinese(words: list[str]) -> list[str]:
 
 
 @timer
-def count_words_frequency(words: list[str], top_k: int = 10) -> tuple[Counter, DataFrame]:
+def regular_english(words: list[str]) -> list[str]:
+    """ Retain only English characters in the list of words
+    :param words: list of words to process
+    :return: list of words containing only English characters
+    """
+    pattern = compile(r"[A-Za-z]+")
+
+    english: list[str] = [word for word in words if pattern.match(word)]
+
+    print(f"Retained {len(english)} English words from the original {len(words)} words.")
+
+    return english
+
+
+@timer
+def count_words_frequency(words: list[str], top_k: int = 10) -> tuple[list, DataFrame]:
     """ Get frequency of Chinese words
     :param words: list of words to process
     :param top_k: number of top frequent words to return
@@ -39,18 +56,20 @@ def count_words_frequency(words: list[str], top_k: int = 10) -> tuple[Counter, D
     """
     # Get word frequency using Counter
     counter = Counter(words)
+    words: list[str] = [word for word, count in counter.most_common()]
 
     cols: list[str] = ["word", "frequency"]
-    df: DataFrame = DataFrame(counter.items(), columns=cols)[:top_k]
+    sorted_freq = counter.most_common(top_k)
+    df: DataFrame = DataFrame(sorted_freq, columns=cols)
     sorted_df = df.sort_values(by="frequency", ascending=False)
 
     print(f"Word Frequency Results:\n{sorted_df}")
 
-    return counter, sorted_df
+    return words, sorted_df
 
 
 @timer
-def snlp_analysis(content: str, mode: str = "cut", language: str = "en", is_gpu: bool = False) -> list[tuple[str, str]]:
+def snlp_analysis(content: str, mode: str = "cut", language: str = "en", is_gpu: bool = False) -> list[str]:
     """ Perform part-of-speech tagging using StanfordNLP
     :param content: text content to process
     :param mode: processing mode, e.g., 'cut' for word segmentation, 'pos' for get words and their pos, 'full' for full text processing,
@@ -67,44 +86,32 @@ def snlp_analysis(content: str, mode: str = "cut", language: str = "en", is_gpu:
     # download(language)
 
     # Set up the processors based on the mode
-    processors: str = "tokenize,pos"
+    processors: str = "tokenize,lemma"
     match mode:
         case "cut":
-            processors: str = "tokenize"
+            processors: str = "tokenize,lemma"
         case "pos":
-            processors: str = "tokenize,pos"
-        case "full":
-            processors: str = "tokenize,pos,lemma"
+            processors: str = "tokenize,lemma,pos"
     # Initialize the StanfordNLP pipeline
     nlp = Pipeline(processors=processors, lang=language, use_gpu=is_gpu)
     # Process the content
     doc = nlp(content)
 
-    result: list[tuple[str] | tuple[str, str] | tuple[str, str, str]] = []
+    words_tuple: list[tuple[str] | tuple[str, str] | tuple[str, str, str]] = []
     # Extract words and their POS tags
     for sentence in doc.sentences:
         for word in sentence.words:
             match processors:
-                case "tokenize":
-                    result.append((word.text,))
-                case "tokenize,pos":
-                    result.append((word.text, word.upos))
-                case "tokenize,pos,lemma":
-                    result.append((word.text, word.upos, word.lemma))
+                case "tokenize,lemma":
+                    words_tuple.append((word.text.lower(),))
+                case "tokenize,lemma,pos":
+                    words_tuple.append((word.text.lower(), word.upos))
 
-    df: DataFrame = DataFrame()
-    match processors:
-        case "tokenize":
-            df: DataFrame = DataFrame(data=result, columns=["word"])
-        case "tokenize,pos":
-            df: DataFrame = DataFrame(data=result, columns=["word", "pos"])
-        case "tokenize,pos,lemma":
-            df: DataFrame = DataFrame(data=result, columns=["word", "pos", "lemma"])
+    words: list[str] = [word[0] for word in words_tuple]
 
-    # print(f"StanfordNLP Text Analysis Result:\n{df}")
-    print(f"The {len(result)} words has been {mode} using StanfordNLP Text Analysis.")
+    print(f"The {len(words)} words has been {mode} using StanfordNLP Text Analysis.")
 
-    return result
+    return words
 
 
 @timer
@@ -145,3 +152,18 @@ def extract_zh_chars(filepath: str | Path, pattern: str = r"[^\u4e00-\u9fa5]") -
     print(f"Total number of lines in the Chinese content: {len(lines)}")
 
     return chars, lines
+
+
+@timer
+def tokenize_english(text: str) -> list:
+    """ Tokenize English text by spaces.
+    :param text: The text to be tokenized.
+    :return: List of tokens.
+    """
+    stopwords = read_file(CONFIG.FILEPATHS.STOPWORDS)
+    tokens: list = [token for token in text.split() if token]
+    tokens: list = [token for token in tokens if token.lower() not in stopwords]
+
+    print(f"Tokenized {len(tokens)} English words from the text.")
+
+    return tokens
