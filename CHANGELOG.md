@@ -1,7 +1,11 @@
 <!-- insertion marker -->
-<a name="0.0.1"></a>
+<a name="0.1.0"></a>
 
-## [0.0.1](https://github.com///compare/e542837ade41979f69f79358c5b882d0e76f495c...0.0.1) (2025-10-23)
+## [0.1.0](https://github.com///compare/e542837ade41979f69f79358c5b882d0e76f495c...0.1.0) (2025-10-23)
+
+### Features
+
+- create OUT.py with initial metadata and encoding declaration ([e907c17](https://github.com///commit/e907c17ddffcc4960a44699b9efeb2d0c7970be9))
 
 ### Bug Fixes
 
@@ -21,6 +25,7 @@
 
 ### Chore
 
+- add CHANGELOG.md for version 0.0.1 with bug fixes and documentation updates ([3289cdc](https://github.com///commit/3289cdc9cb21e251b3a64464f75e9ab7d10de7a4))
 - add git-changelog configuration to pyproject.toml ([437b03b](https://github.com///commit/437b03b9d2e5e6a0e197791c1671cd892380a477))
 - add .gitignore to exclude Python-generated files and IDE configurations ([e1df047](https://github.com///commit/e1df047c36615889de09ce52a2c2e1e3b0ad528a))
 - update .gitignore to exclude PyCharm files and virtual environment directories ([cb889ab](https://github.com///commit/cb889ab9d47cf345efd60c61955b730d7d475096))
