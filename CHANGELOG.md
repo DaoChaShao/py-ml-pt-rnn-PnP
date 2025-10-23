@@ -5,6 +5,23 @@
 
 ### Features
 
+- add uv sync file uv.lock ([70b094b](https://github.com///commit/70b094b5b79c2d90a9f544d42ca4e9b0f7e1be77))
+- add THULAC text segmentation functions for word cutting with and without POS tags ([4b46ef5](https://github.com///commit/4b46ef58ee5f8a248ed03ca13c3d2853abce17ab))
+- add data processing functions including random seed management, data loading, preprocessing, and PCA feature importance ([0be27d1](https://github.com///commit/0be27d1312008b08678f56f11cd0487d2391f3e7))
+- update Chinese README to include Stanza and spaCy as additional text processing tools ([6eb0c72](https://github.com///commit/6eb0c7218f4efc7b53c9e65bafd0135cdfcba6a8))
+- update README to include Stanza and spaCy as additional text processing tools ([79574a3](https://github.com///commit/79574a3280fa0ba739fb56c6240dc5ef46d4a829))
+- update dependencies in pyproject.toml for enhanced functionality and performance ([f69379d](https://github.com///commit/f69379d3543647245afed997e889bf5ee600d602))
+- add custom PyTorch classes for random seed management, dataset handling, and device checking ([cad9eba](https://github.com///commit/cad9eba259b8b941a809ccc1f9b9ddc2f7c00f9c))
+- add an English article as data ([9debb01](https://github.com///commit/9debb01722a5dcd98407582d3ed2b1c3bf1e00c2))
+- add Outputter class for controlled message printing ([c5b5ed9](https://github.com///commit/c5b5ed9f608c4fed790c2dc487e46f4ebd47e188))
+- add functions for Chinese text processing and analysis with performance tracking ([32d1aab](https://github.com///commit/32d1aab755bb175974af076494308d28279124d2))
+- implement main function placeholder for future development ([fb6d19c](https://github.com///commit/fb6d19cb9eebe4539cae5031a2e0c2444df7660c))
+- add jieba text processing functions with performance tracking ([783751c](https://github.com///commit/783751cf24f3acccb500f1165536114ed043b5e7))
+- add text highlighting and formatting functions for improved output presentation ([ee2e97d](https://github.com///commit/ee2e97d4292ca839bbeb0ae3e898d776142bf79c))
+- add Timer, Beautifier, and RandomSeed context managers for enhanced code performance and readability ([dc3ca40](https://github.com///commit/dc3ca405ec53160ff5a0d11194132d4ca7b0855c))
+- add timer and beautifier decorators for function performance tracking ([f79df6d](https://github.com///commit/f79df6d2bce73cb64d1802b86092d9869230d713))
+- implement log_mse_loss function for regression tasks ([df212fe](https://github.com///commit/df212febada96c9d2edb2088422249612de26766))
+- add configuration classes for file paths, data preprocessing, model parameters, and hyperparameters ([a948ff3](https://github.com///commit/a948ff32ea76340fd7b4614c069a9f01fa75314e))
 - create OUT.py with initial metadata and encoding declaration ([e907c17](https://github.com///commit/e907c17ddffcc4960a44699b9efeb2d0c7970be9))
 
 ### Bug Fixes
@@ -25,6 +42,7 @@
 
 ### Chore
 
+- update CHANGELOG.md for version 0.1.0 with new features and improvements ([54b6359](https://github.com///commit/54b6359cf455c43f1c051ebc1519a4c1251212f1))
 - add CHANGELOG.md for version 0.0.1 with bug fixes and documentation updates ([3289cdc](https://github.com///commit/3289cdc9cb21e251b3a64464f75e9ab7d10de7a4))
 - add git-changelog configuration to pyproject.toml ([437b03b](https://github.com///commit/437b03b9d2e5e6a0e197791c1671cd892380a477))
 - add .gitignore to exclude Python-generated files and IDE configurations ([e1df047](https://github.com///commit/e1df047c36615889de09ce52a2c2e1e3b0ad528a))
