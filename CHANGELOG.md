@@ -5,6 +5,7 @@
 
 ### Features
 
+- add BSD 3-Clause License file ([bd1edff](https://github.com///commit/bd1edff2789ed55b7df2b3f43d66ee88d8f351f3))
 - add uv sync file uv.lock ([70b094b](https://github.com///commit/70b094b5b79c2d90a9f544d42ca4e9b0f7e1be77))
 - add THULAC text segmentation functions for word cutting with and without POS tags ([4b46ef5](https://github.com///commit/4b46ef58ee5f8a248ed03ca13c3d2853abce17ab))
 - add data processing functions including random seed management, data loading, preprocessing, and PCA feature importance ([0be27d1](https://github.com///commit/0be27d1312008b08678f56f11cd0487d2391f3e7))
@@ -42,7 +43,7 @@
 
 ### Chore
 
-- update CHANGELOG.md for version 0.1.0 with new features and improvements ([54b6359](https://github.com///commit/54b6359cf455c43f1c051ebc1519a4c1251212f1))
+- update CHANGELOG.md for version 0.1.0 with new features and improvements ([1a00a97](https://github.com///commit/1a00a97280435c7390864f4f90fc00628ad8f8bf))
 - add CHANGELOG.md for version 0.0.1 with bug fixes and documentation updates ([3289cdc](https://github.com///commit/3289cdc9cb21e251b3a64464f75e9ab7d10de7a4))
 - add git-changelog configuration to pyproject.toml ([437b03b](https://github.com///commit/437b03b9d2e5e6a0e197791c1671cd892380a477))
 - add .gitignore to exclude Python-generated files and IDE configurations ([e1df047](https://github.com///commit/e1df047c36615889de09ce52a2c2e1e3b0ad528a))
