@@ -6,7 +6,7 @@
 # @File     :   helper.py
 # @Desc     :   
 
-from json import load
+from json import load, dump
 from random import seed as rnd_seed, getstate, setstate
 from pathlib import Path
 from time import perf_counter
@@ -144,3 +144,9 @@ def load_json(json_path: str | Path) -> dict:
     print(f"JSON data loaded from {json_path}:")
 
     return data
+
+
+@timer
+def save_json(json_data: dict, json_path: str | Path) -> None:
+    with open(str(json_path), "w", encoding="utf-8") as file:
+        dump(json_data, file, indent=2)
