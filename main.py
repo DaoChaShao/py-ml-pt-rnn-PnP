@@ -34,7 +34,7 @@ def preprocess_data():
 
     # Filter the words to retain only English words
     filtered = regular_english(words)  # words: 108823
-    # print(filtered)
+    print(filtered)
 
     # Set up the special tokens
     tokens: list[str] = ["<PAD>", "<UNK>"]
