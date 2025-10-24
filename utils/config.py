@@ -37,6 +37,7 @@ class ModelParameters:
     RNN_EMBEDDING_DIM: int = 256
     RNN_HIDDEN_SIZE: int = 512
     RNN_LAYERS: int = 2
+    RNN_TEMPERATURE: float = 1.0
 
 
 @dataclass
