@@ -1,10 +1,11 @@
 <!-- insertion marker -->
 <a name="0.1.0"></a>
 
-## [0.1.0](https://github.com///compare/e542837ade41979f69f79358c5b882d0e76f495c...0.1.0) (2025-10-23)
+## [0.1.0](https://github.com///compare/e542837ade41979f69f79358c5b882d0e76f495c...0.1.0) (2025-10-24)
 
 ### Features
 
+- add requirements.txt with necessary dependencies for the project ([b9ee5a7](https://github.com///commit/b9ee5a7ef027d7d1bb7e887a7010a825cdb03e0c))
 - add TorchTrainer class for training and validation of neural networks ([dd6ff4a](https://github.com///commit/dd6ff4ae3842515d083e60a44c487ec20d96a4b4))
 - add stopwords list for text processing ([616e7a6](https://github.com///commit/616e7a630f2099488699527b7cbdbf8531ba6018))
 - add SpaCy NLP processor for tokenization and lemmatization of English text ([d46f5e9](https://github.com///commit/d46f5e9397cad0dfd1ed2923c9df94131006bf22))
@@ -38,6 +39,9 @@
 
 ### Bug Fixes
 
+- round 69% model.pth ([9abe3b3](https://github.com///commit/9abe3b3035e4bab59fcad56e02b84408b421388f))
+- uncomment print statement to display filtered English words ([a5be339](https://github.com///commit/a5be339afc87a6ec55acf60fb2eb5bbc61fc6398))
+- set download_method to None in StanfordNLP pipeline initialization ([42b17f5](https://github.com///commit/42b17f54bc85f6f56ad9f4db2ee13ca8a8686520))
 - remove unused main function from THU.py ([7e5daa8](https://github.com///commit/7e5daa842046fecc4652ceb0726b086f747b28b9))
 - remove unused main function from stats.py ([92e1208](https://github.com///commit/92e1208845a26d33c8331ae94fd3b22b6a52a592))
 - remove unused main function from PT.py ([197aa60](https://github.com///commit/197aa609532573dfaa0268dee3cf272eb44677b7))
@@ -54,6 +58,7 @@
 
 ### Chore
 
+- update CHANGELOG.md to reflect recent feature additions and refactoring ([35146f7](https://github.com///commit/35146f73c1e1a7059eb56e3b6bb2eddcbac6fa90))
 - update CHANGELOG.md to include BSD 3-Clause License addition ([8db137a](https://github.com///commit/8db137a92b0303c9601258baf38507e0d102a698))
 - update CHANGELOG.md for version 0.1.0 with new features and improvements ([1a00a97](https://github.com///commit/1a00a97280435c7390864f4f90fc00628ad8f8bf))
 - add CHANGELOG.md for version 0.0.1 with bug fixes and documentation updates ([3289cdc](https://github.com///commit/3289cdc9cb21e251b3a64464f75e9ab7d10de7a4))
@@ -67,6 +72,7 @@
 
 ### Code Refactoring
 
+- remove unused import of 'sub' from re module in SPA.py ([e09bdf8](https://github.com///commit/e09bdf8aacec0c41705cb217e74cacc8e22c050a))
 - comment out print statements for training and validation loss and accuracy ([045015b](https://github.com///commit/045015be92084d77ce51d8105b707ac8c8fad70f))
 - rename methods and instance of Outputter for consistency ([66a0f9e](https://github.com///commit/66a0f9ebf8558460da84a4270905083ffcb3ded5))
 
