@@ -6,7 +6,6 @@
 # @File     :   SPA.py
 # @Desc     :   
 
-from re import sub
 from spacy import load
 
 from utils.decorator import Timer
