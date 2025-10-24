@@ -93,7 +93,7 @@ def snlp_analysis(content: str, mode: str = "cut", language: str = "en", is_gpu:
         case "pos":
             processors: str = "tokenize,lemma,pos"
     # Initialize the StanfordNLP pipeline
-    nlp = Pipeline(processors=processors, lang=language, use_gpu=is_gpu)
+    nlp = Pipeline(processors=processors, lang=language, use_gpu=is_gpu, download_method=None)
     # Process the content
     doc = nlp(content)
 
