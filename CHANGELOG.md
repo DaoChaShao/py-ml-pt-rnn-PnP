@@ -5,6 +5,8 @@
 
 ### Features
 
+- add predictor script for character prediction using RNN model ([90efa25](https://github.com///commit/90efa2583a63cea3b26784b71c239e7af733667c))
+- add RNN_TEMPERATURE parameter to configuration ([65cd787](https://github.com///commit/65cd787ffea78d19f0774bbdfb9ee3ecb15cd7b0))
 - add requirements.txt with necessary dependencies for the project ([b9ee5a7](https://github.com///commit/b9ee5a7ef027d7d1bb7e887a7010a825cdb03e0c))
 - add TorchTrainer class for training and validation of neural networks ([dd6ff4a](https://github.com///commit/dd6ff4ae3842515d083e60a44c487ec20d96a4b4))
 - add stopwords list for text processing ([616e7a6](https://github.com///commit/616e7a630f2099488699527b7cbdbf8531ba6018))
@@ -39,6 +41,7 @@
 
 ### Bug Fixes
 
+- comment out print statement for filtered English words ([3a3fcae](https://github.com///commit/3a3fcaed9ce76680b7770bab757add0d4d5d1ecd))
 - round 69% model.pth ([9abe3b3](https://github.com///commit/9abe3b3035e4bab59fcad56e02b84408b421388f))
 - uncomment print statement to display filtered English words ([a5be339](https://github.com///commit/a5be339afc87a6ec55acf60fb2eb5bbc61fc6398))
 - set download_method to None in StanfordNLP pipeline initialization ([42b17f5](https://github.com///commit/42b17f54bc85f6f56ad9f4db2ee13ca8a8686520))
@@ -58,6 +61,7 @@
 
 ### Chore
 
+- update CHANGELOG.md to reflect recent changes and additions ([731c630](https://github.com///commit/731c6303ac75700e31aac631d45bc3c8e2f013b5))
 - update CHANGELOG.md to reflect recent feature additions and refactoring ([35146f7](https://github.com///commit/35146f73c1e1a7059eb56e3b6bb2eddcbac6fa90))
 - update CHANGELOG.md to include BSD 3-Clause License addition ([8db137a](https://github.com///commit/8db137a92b0303c9601258baf38507e0d102a698))
 - update CHANGELOG.md for version 0.1.0 with new features and improvements ([1a00a97](https://github.com///commit/1a00a97280435c7390864f4f90fc00628ad8f8bf))
